@@ -1,17 +1,21 @@
 {
   "name": "galaxy-creatures",
+  "homepage": "https://ogodeverest.github.io/galaxy-creatures/",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html --open",
-    "build": "parcel build src/index.html --no-content-hash --no-source-maps --public-url ./"
+    "build": "parcel build src/index.html --no-content-hash --no-source-maps --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@parcel/config-default": "^2.0.0-alpha.3",
+    "gh-pages": "^3.2.3",
     "parcel-bundler": "^1.12.5",
     "parcel-reporter-static-files-copy": "^1.3.0"
   },

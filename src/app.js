@@ -108,7 +108,7 @@ export default class WegblApp {
       { path: "./static/objects/rabbit/Rabbit.obj", name: "Rabbit" },
       { path: "./static/objects/cat/Cat.obj", name: "Cat" },
       { path: "./static/objects/frog/Frog.obj", name: "Frog" },
-      { path: "./static/objects/Bear/Bear.obj", name: "Bear" },
+      { path: "./static/objects/bear/Bear.obj", name: "Bear" },
       { path: "./static/objects/fish/Fish.obj", name: "Fish" },
     ];
 
@@ -167,7 +167,10 @@ export default class WegblApp {
   }
 
   autoSwitchModels() {
-    setInterval(() => this.selectedModel.isFinished() && showNext(), 20000);
+    setInterval(
+      () => this.selectedModel.isFinished() && this.showNext(),
+      20000
+    );
   }
 
   initEventListeners() {

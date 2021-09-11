@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.6145e9cd.css">
-    <title>Document</title>
-  <script src="/styles.6145e9cd.js"></script></head>
-  <body id="stage">
-    <div class="loading-screen" id="loading-screen">
-      <h4 id="loading-file-info"></h4>
-    </div>
-    <footer>
-      <div class="instructions">
-        <p>
-          Press <kbd>&#8592;</kbd> <kbd> &#8594;</kbd> keys to view models or
-          <kbd>double-tap</kbd> , <kbd>a</kbd> to toggle audio
-        </p>
-      </div>
-    </footer>
-    <script type="x-shader/x-vertex" id="vertexShader">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.6145e9cd.css"><title>Galaxy Creatures</title></head><body id="stage"> <div class="loading-screen" id="loading-screen"> <h4 id="loading-file-info"></h4> </div> <footer> <div class="instructions"> <p> Press <kbd>&#8592;</kbd> <kbd> &#8594;</kbd> keys to view models or <kbd>double-tap</kbd> , <kbd>a</kbd> to toggle audio </p> </div> </footer> <script type="x-shader/x-vertex" id="vertexShader">
          attribute float size;
       attribute vec3 color;
       attribute float fade;
@@ -35,15 +11,11 @@
       	gl_PointSize = size;
       	gl_Position = projectionMatrix * mvPosition;
       }
-    </script>
-    <script type="x-shader/x-fragment" id="fragmentShader">
+    </script> <script type="x-shader/x-fragment" id="fragmentShader">
       uniform sampler2D pointTexture;
       varying vec3 vColor;
       void main() {
       	gl_FragColor = vec4(vColor, 1.0);
       	gl_FragColor = gl_FragColor * texture2D(pointTexture, gl_PointCoord);
       }
-    </script>
-    <script src="/src.e31bb0bc.js"></script>
-  </body>
-</html>
+    </script> <script src="src.e31bb0bc.js"></script> </body></html>
