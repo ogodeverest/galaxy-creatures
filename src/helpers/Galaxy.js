@@ -10,6 +10,7 @@ import {
 } from "three";
 import Star from "./Star";
 import galaxyColors from "./galaxyColors";
+import dataEndpoint from "../dataEndpoint";
 
 export default class Galaxy extends Object3D {
   constructor() {
@@ -21,7 +22,9 @@ export default class Galaxy extends Object3D {
     const sparklesMaterial = new ShaderMaterial({
       uniforms: {
         pointTexture: {
-          value: new TextureLoader().load("./static/textures/dotTexture.png"),
+          value: new TextureLoader().load(
+            `${dataEndpoint}textures/dotTexture.png`
+          ),
         },
       },
       vertexShader: document.getElementById("vertexShader").textContent,

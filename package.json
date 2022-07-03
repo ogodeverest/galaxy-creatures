@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "ccapture.js": "^1.1.0",
+    "ccapture.js-npmfixed": "^1.1.0",
     "hammerjs": "^2.0.8",
     "three": "^0.132.2"
   }

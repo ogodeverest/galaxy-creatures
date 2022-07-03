@@ -23,6 +23,7 @@ import {
   changeQueryParams,
   resizeRendererToDisplaySize,
 } from "./helpers/helperFunctions";
+import dataEndpoint from "./dataEndpoint";
 
 export default class WegblApp {
   constructor() {
@@ -102,14 +103,14 @@ export default class WegblApp {
 
   initModels() {
     this.models = [
-      { path: "./static/objects/deer/Deer.obj", name: "Deer" },
-      { path: "./static/objects/owl/Owl.obj", name: "Owl" },
-      { path: "./static/objects/wolf/Wolf.obj", name: "Wolf" },
-      { path: "./static/objects/rabbit/Rabbit.obj", name: "Rabbit" },
-      { path: "./static/objects/cat/Cat.obj", name: "Cat" },
-      { path: "./static/objects/frog/Frog.obj", name: "Frog" },
-      { path: "./static/objects/bear/Bear.obj", name: "Bear" },
-      { path: "./static/objects/fish/Fish.obj", name: "Fish" },
+      { path: `${dataEndpoint}objects/deer/Deer.obj`, name: "Deer" },
+      { path: `${dataEndpoint}objects/owl/Owl.obj `, name: "Owl" },
+      { path: `${dataEndpoint}objects/wolf/Wolf.obj`, name: "Wolf" },
+      { path: `${dataEndpoint}objects/rabbit/Rabbit.obj`, name: "Rabbit" },
+      { path: `${dataEndpoint}objects/cat/Cat.obj`, name: "Cat" },
+      { path: `${dataEndpoint}objects/frog/Frog.obj`, name: "Frog" },
+      { path: `${dataEndpoint}objects/bear/Bear.obj`, name: "Bear" },
+      { path: `${dataEndpoint}objects/fish/Fish.obj`, name: "Fish" },
     ];
 
     this.models.forEach((model) => {
@@ -124,7 +125,7 @@ export default class WegblApp {
     this.camera.add(listener);
     this.audio = new Audio(listener);
     const audioLoader = new AudioLoader(this.loadingManager);
-    audioLoader.load("./static/audio/Oxygène.mp3", (buffer) => {
+    audioLoader.load(`${dataEndpoint}audio/Oxygène.mp3`, (buffer) => {
       this.audio.setBuffer(buffer);
       this.audio.setLoop(true);
       this.audio.setVolume(0.3);
@@ -224,7 +225,6 @@ export default class WegblApp {
     this.selectedModel.animate();
     this.galaxy.animate();
     this.switchToNextModel();
-
     this.controls.update();
     this.composer.render();
   }
